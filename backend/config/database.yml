@@ -93,4 +93,5 @@ development:
   username: jordi
   password: jordiAlba
   host: localhost
+  port: 5432 # Default port for PostgreSQL
 

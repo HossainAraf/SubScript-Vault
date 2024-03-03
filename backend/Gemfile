@@ -36,7 +36,7 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 # Use jwt for handling JSON Web Tokens
-# gem 'jwt', '~> 2.2', '>= 2.2.3'
+gem 'jwt', '~> 2.2', '>= 2.2.3'
 
 # gem 'rspec-rails'
 

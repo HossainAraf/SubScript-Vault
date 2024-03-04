@@ -38,6 +38,9 @@ gem "rack-cors"
 # Use jwt for handling JSON Web Tokens
 gem 'jwt', '~> 2.2', '>= 2.2.3'
 
+# Use rubocop for static code analysis
+gem 'rubocop', '>= 1.0', '< 2.0'
+
 # gem 'rspec-rails'
 
 group :development, :test do

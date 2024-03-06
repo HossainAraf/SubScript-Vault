@@ -4,13 +4,13 @@ const SignupForm = () => {
   const [formData, setFormData] = React.useState({
     username: '',
     password: '',
-    age: ''
+    age: '',
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -20,16 +20,16 @@ const SignupForm = () => {
       const response = await fetch('http://localhost:3001/signup', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
       const data = await response.json();
       console.log(data); // { message: 'User created' }
     } catch (error) {
       console.error(error); // Error: request failed
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -66,7 +66,6 @@ const SignupForm = () => {
       <button type="submit">Signup</button>
     </form>
   );
-
 };
 
 export default SignupForm;

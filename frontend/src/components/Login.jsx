@@ -24,16 +24,19 @@ const LoginForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(data); // { message: 'User verified' }
-
       if (response.ok) {
-        // Redirect to the dashboard
-        window.location.replace('/dashboard');
+        localStorage.setItem('token', data.token); // Assuming your server sends back a token upon successful login
+        // Redirect to dashboard or any desired page
+        window.location.href = '/dashboard';
+      } else {
+        // Handle login errors here
+        console.error(data.message);
       }
     } catch (error) {
       console.error(error); // Error: request failed
     }
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>

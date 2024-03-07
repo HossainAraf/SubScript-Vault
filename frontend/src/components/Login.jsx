@@ -24,7 +24,12 @@ const LoginForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(data); // { message: 'User created' }
+      console.log(data); // { message: 'User verified' }
+
+      if (response.ok) {
+        // Redirect to the dashboard
+        window.location.replace('/dashboard');
+      }
     } catch (error) {
       console.error(error); // Error: request failed
     }

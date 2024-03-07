@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import SignupForm from './components/Signup';
 import LoginForm from './components/Login';
+import Dashboard from './components/Dashboard';
 import './styles/App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

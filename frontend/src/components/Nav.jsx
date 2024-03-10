@@ -16,9 +16,9 @@ function Nav() {
   };
 
   return (
-    <nav className="sm:hidden" id="mobile-menu">
-      <ul className="space-y-1 px-2 pb-3 pt-2">
-        <li>
+    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+      <ul className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <li className="flex items-center space-x-3 rtl:space-x-reverse">
           <Link to="/">Home</Link>
           <Link to="/page1">Page-1</Link>
           <Link to="/page2">Page-2</Link>

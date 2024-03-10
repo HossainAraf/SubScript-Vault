@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 const SignupForm = () => {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     username: '',
     password: '',
     age: '',
   });
 
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,6 +19,14 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic client-side validation
+    if (!formData.username || !formData.password || !formData.age) {
+      setError('Please fill out all fields.');
+      return;
+    }
+
+    setIsLoading(true);
     try {
       const response = await fetch('http://localhost:3001/signup', {
         method: 'POST',
@@ -27,13 +36,11 @@ const SignupForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      if (response.ok) {
-        localStorage.setItem('token', data.token);
-        window.location.href = '/dashboard';
-      } else {
-        setError(data.message);
-      }
+      setIsLoading(false);
+      console.log(data); // { message: 'User created' }
+      // Optionally, you can redirect the user to a login page or display a success message
     } catch (error) {
+      setIsLoading(false);
       setError('Something went wrong. Please try again.');
     }
   };
@@ -81,7 +88,9 @@ const SignupForm = () => {
           />
         </label>
       </div>
-      <button type="submit">Signup</button>
+      <button type="submit" disabled={isLoading}>
+        {isLoading ? 'Loading...' : 'Signup'}
+      </button>
     </form>
   );
 };

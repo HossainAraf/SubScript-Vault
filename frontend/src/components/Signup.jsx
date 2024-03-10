@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const SignupForm = () => {
   const [formData, setFormData] = React.useState({
@@ -6,6 +6,8 @@ const SignupForm = () => {
     password: '',
     age: '',
   });
+
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -25,14 +27,24 @@ const SignupForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(data); // { message: 'User created' }
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        window.location.href = '/dashboard';
+      } else {
+        setError(data.message);
+      }
     } catch (error) {
-      console.error(error); // Error: request failed
+      setError('Something went wrong. Please try again.');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      {error && (
+        <div>
+          <p>{error}</p>
+        </div>
+      )}
       <div>
         <label htmlFor="username">
           Username

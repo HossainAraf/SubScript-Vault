@@ -1,6 +1,7 @@
-# frozen_string_literal: true
 
 source 'https://rubygems.org'
+
+# frozen_string_literal: true
 
 ruby '3.2.2'
 
@@ -39,6 +40,9 @@ gem 'rack-cors'
 
 # Use jwt for handling JSON Web Tokens
 gem 'jwt', '~> 2.2', '>= 2.2.3'
+
+# Use rubocop for static code analysis
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 # gem 'rspec-rails'
 

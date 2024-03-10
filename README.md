@@ -49,7 +49,8 @@ Using Postman
 
 ### Key Features <a name="key-features"></a>
 
--Authentication backend setup
+-Authentication features (signup, login & logout)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,8 +116,7 @@ Project can be deployed by using the gh-pages and other web platforms. (coming s
 
 ## 🔭 Future Features <a name="future-features"></a>
 
--Authentication features (signup, login & logout)
- Subscription 
+- Subscription 
 - Payment gateway
 - Styles
 
@@ -154,3 +154,4 @@ I would like to thank  my coding partiner HossainAraf, code reviewers
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+

@@ -28,7 +28,7 @@ function Nav() {
           )}
           {isLoggedIn && (
             <>
-              <Link to="/logout"><button type="button" onClick={handleLogout}>Logout</button></Link>
+              <Link to="/"><button type="button" onClick={handleLogout}>Logout</button></Link>
             </>
           )}
         </li>

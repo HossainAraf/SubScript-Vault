@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LoginForm = () => {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
+
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -25,20 +27,28 @@ const LoginForm = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        localStorage.setItem('token', data.token); // Assuming your server sends back a token upon successful login
-        // Redirect to dashboard or any desired page
+        localStorage.setItem('token', data.token);
         window.location.href = '/dashboard';
       } else {
-        // Handle login errors here
-        console.error(data.message);
+        setError(data.message);
       }
     } catch (error) {
-      console.error(error); // Error: request failed
+      setError('Something went wrong. Please try again.');
     }
+  };
+
+  const handleCloseError = () => {
+    setError(null);
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      {error && (
+        <div>
+          <p>{error}</p>
+          <button onClick={handleCloseError} type="button">Close</button>
+        </div>
+      )}
       <div>
         <label htmlFor="username">
           Username

@@ -10,6 +10,11 @@ function Nav() {
     setIsLoggedIn(!!token); // Update isLoggedIn state based on the presence of token
   }, []); // Run only once when the component mounts
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav>
       <ul>
@@ -23,7 +28,7 @@ function Nav() {
           )}
           {isLoggedIn && (
             <>
-              <Link to="/logout"><button type="button">Logout</button></Link>
+              <Link to="/logout"><button type="button" onClick={handleLogout}>Logout</button></Link>
             </>
           )}
         </li>

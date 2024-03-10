@@ -51,6 +51,7 @@ Using Postman
 
 -Authentication features (signup, login & logout)
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -148,10 +149,9 @@ I would like to thank  my coding partiner HossainAraf, code reviewers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
- 
+

@@ -37,8 +37,9 @@ const SignupForm = () => {
       });
       const data = await response.json();
       setIsLoading(false);
-      console.log(data); // { message: 'User created' }
-      // Optionally, you can redirect the user to a login page or display a success message
+      if (!response.ok) {
+        setError(data.message);
+      }
     } catch (error) {
       setIsLoading(false);
       setError('Something went wrong. Please try again.');

@@ -16,7 +16,7 @@ const Dashboard = () => (
     <div className="header-wrapper">
       <h1>Dashboard</h1>
     </div>
-    <div className="content-wrapper grid grid-cols-3 gap-4">
+    <div className="content-wrapper grid grid-cols-1 gap-4 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3">
       <div className="w-full">
         <img src={sample1} alt="sample-1" className="w-full h-full object-cover" />
         <h3>Content -1</h3>

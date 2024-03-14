@@ -53,6 +53,8 @@ const Dashboard = () => (
         <img src={sample9} alt="sample-9" className="w-full h-full object-cover" />
         <h3>Content -9</h3>
       </div>
+    </div>
+    <div className="logout">
       <Logout />
     </div>
   </div>

@@ -19,7 +19,10 @@ const Dashboard = () => (
     <div className="content-wrapper grid grid-cols-1 gap-4 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3">
       <div className="w-full">
         <img src={sample1} alt="sample-1" className="w-full h-full object-cover" />
-        <h3>Content -1</h3>
+        <span className="title-wrapper">
+          <h3>Content -1</h3>
+          <p>Premium</p>
+        </span>
       </div>
       <div className="w-full">
         <img src={sample2} alt="sample-2" className="w-full h-full object-cover" />
@@ -43,7 +46,10 @@ const Dashboard = () => (
       </div>
       <div className="w-full">
         <img src={sample7} alt="sample-7" className="w-full h-full object-cover" />
-        <h3>Content -7</h3>
+        <span className="title-wrapper">
+          <h3>Content -7</h3>
+          <p>Premium</p>
+        </span>
       </div>
       <div className="w-full">
         <img src={sample8} alt="sample-8" className="w-full h-full object-cover" />

@@ -33,6 +33,15 @@
   border-radius: 0.5rem;
 }
 
+.title-wrapper {
+  display: flex;
+}
+
+.title-wrapper p {
+  margin-left: 5%;
+  color: #4f46e5;
+}
+
 .logout {
   display: flex;
   justify-content: center;

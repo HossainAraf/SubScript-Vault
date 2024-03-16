@@ -1,4 +1,4 @@
-require 'test_helper'
+# frozen_string_literal: true
 
 module ApplicationCable
   class ConnectionTest < ActionCable::Connection::TestCase

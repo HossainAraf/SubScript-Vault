@@ -1,4 +1,4 @@
-# rails-react-app
+# SubScript-Vault
 <a name="readme-top"></a>
 <!-- TABLE OF CONTENTS -->
 
@@ -24,7 +24,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 React-Raild project <a name="about-project"></a>
+# 📖 SubScript-Vault <a name="about-project"></a>
 
 
 
@@ -41,7 +41,7 @@ Using Postman
 <details>
   Rails
   React
-  CSS  
+  Tailwind
 
   </details>
 
@@ -50,6 +50,7 @@ Using Postman
 ### Key Features <a name="key-features"></a>
 
 -Authentication features (signup, login & logout)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,7 +69,7 @@ In order to run this project, you need:
 
 Clone this repository to your desired folder:
 
-https://github.com/HossainAraf/rails-react-app
+https://github.com/HossainAraf/SubScript-Vault
 
 
 ### Install
@@ -148,10 +149,9 @@ I would like to thank  my coding partiner HossainAraf, code reviewers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
- 
+

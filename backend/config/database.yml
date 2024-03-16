@@ -79,11 +79,13 @@
 # # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # # for a full overview on how database connection configuration can be specified.
 # #
-# production:
-#   <<: *default
-#   database: jordi-database
-#   username: jordi
-#   password: jordi1Alba
+
+production:
+  <<: *default
+  database: jordidb_01
+  username: jordidb_01_user
+  password: UGlq5O4QsDK4aeR0J58zuD1Bo8K8QYP9
+  url: <%= ENV["DATABASE_URL"] %>
 
 development:
   adapter: postgresql
@@ -94,4 +96,3 @@ development:
   password: jordiAlba
   host: localhost
   port: 5432 # Default port for PostgreSQL
-

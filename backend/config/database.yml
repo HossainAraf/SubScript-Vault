@@ -81,7 +81,6 @@
 # #
 
 production:
-  <<: *default
   database: jordidb_01
   username: jordidb_01_user
   password: UGlq5O4QsDK4aeR0J58zuD1Bo8K8QYP9

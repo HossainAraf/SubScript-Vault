@@ -36,6 +36,9 @@ pidfile ENV.fetch('PIDFILE', 'tmp/pids/server.pid')
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
 
+# Bind to a specific IP address and port
+bind 'tcp://0.0.0.0:3000'
+
 # Specify the path to the SSL certificate and key file for the server (localhost).
 # ssl_bind '0.0.0.0', '8443', {
 #   key: '/mnt/d/fullstack/private/localhost.key',

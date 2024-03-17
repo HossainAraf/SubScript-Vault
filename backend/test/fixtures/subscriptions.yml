@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  plan: one
+  status: MyString
+  stripe_subscription_id: MyString
+
+two:
+  user: two
+  plan: two
+  status: MyString
+  stripe_subscription_id: MyString

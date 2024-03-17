@@ -1,20 +1,26 @@
 databases:
   - name: jordidb-01
+    ipAllowList: []
     plan: free
 
 services:
   - type: web
     name: rails
-    runtime: ruby
     plan: free
+    env: ruby
     buildCommand: "./backend/bin/render-build.sh"
-    startCommand: "bundle exec rails server"
+    startCommand: bundle exec rails s
     envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
       - key: DATABASE_URL
         fromDatabase:
           name: jordidb-01
           property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
-      - key: WEB_CONCURRENCY
-        value: 2
+
+  -type: redis
+    name: redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: noeviction
+

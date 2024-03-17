@@ -1,6 +1,5 @@
 databases:
   - name: jordidb-01
-    ipAllowlist: []
     plan: free
 
 services:
@@ -23,4 +22,3 @@ services:
   - type: redis
     name: redis
     plan: free
-    ipAllowlist: []

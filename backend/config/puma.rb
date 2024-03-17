@@ -1,24 +1,4 @@
-# frozen_string_literal: true
-
-# This configuration file will be evaluated by Puma. The top-level methods that
-# are invoked here are part of Puma's configuration DSL. For more information
-# about methods provided by the DSL, see https://puma.io/puma/Puma/DSL.html.
-
-# Puma can serve each request in a thread from an internal thread pool.
-# The `threads` method setting takes two numbers: a minimum and maximum.
-# Any libraries that use thread pools should be configured to match
-# the maximum value specified for Puma. Default is set to 5 threads for minimum
-# and maximum; this matches the default thread size of Active Record.
-max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
-min_threads_count = ENV.fetch('RAILS_MIN_THREADS') { max_threads_count }
-threads min_threads_count, max_threads_count
-
-# Specifies that the worker count should equal the number of processors in production.
-if ENV['RAILS_ENV'] == 'production'
-  require 'concurrent-ruby'
-  worker_count = Integer(ENV.fetch('WEB_CONCURRENCY') { Concurrent.physical_processor_count })
-  workers worker_count if worker_count > 1
-end
+# config/puma.rb
 
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
 # terminating a worker in development environments.
@@ -39,11 +19,9 @@ plugin :tmp_restart
 # Bind to a specific IP address and port
 bind 'tcp://0.0.0.0:3000'
 
-# Specify the path to the SSL certificate and key file for the server (localhost).
-# ssl_bind '0.0.0.0', '8443', {
-#   key: '/mnt/d/fullstack/private/localhost.key',
-#   cert: '/mnt/d/fullstack/private/localhost.crt',
-#   verify_mode: 'none' # (optional) if you want to verify the client's certificate
-# }
-# Since we are using a self-signed certificate, we need to set the `verify_mode` to 'none'.
-# We are commenting out the `ssl_bind` method because we are not using SSL in development.
+# Increase the number of workers
+workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+
+# Increase the number of threads per worker
+threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
+threads threads_count, threads_count

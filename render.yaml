@@ -1,7 +1,5 @@
 databases:
   - name: jordidb-01
-    # databaseName: jordidb_01
-    # user: jordi
     ipAllowlist: []
     plan: free
 
@@ -11,7 +9,6 @@ services:
     runtime: ruby
     plan: free
     buildCommand: "./backend/bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
@@ -21,10 +18,9 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2 # sensible default
+        value: 2
 
-  -type: redis
+  - type: redis
     name: redis
     plan: free
     ipAllowlist: []
-Do

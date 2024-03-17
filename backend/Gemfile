@@ -44,6 +44,15 @@ gem 'jwt', '~> 2.2', '>= 2.2.3'
 # Use rubocop for static code analysis
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# Use SCSS for stylesheets
+gem 'sass-rails', '>= 6'
+
+# Use Uglifier as JavaScript compressor
+gem 'uglifier'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 # gem 'rspec-rails'
 
 group :development, :test do

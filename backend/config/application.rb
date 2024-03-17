@@ -30,5 +30,7 @@ module Backend
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    # Disable asset compilation
+    config.assets.enabled = false
   end
 end

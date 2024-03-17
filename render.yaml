@@ -22,3 +22,4 @@ services:
   - type: redis
     name: redis
     plan: free
+    ipAllowlist: [ "0.0.0.0/0" ] # Allow connections from any IP address

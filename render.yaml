@@ -1,6 +1,6 @@
 databases:
   - name: jordidb-01
-    ipAllowlist: []
+    ipAllowList: []
     plan: free
 
 services:
@@ -20,6 +20,6 @@ services:
 
   - type: redis
     name: redis
-    ipAllowlist: []
+    ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
